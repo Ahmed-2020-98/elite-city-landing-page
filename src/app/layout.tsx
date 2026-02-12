@@ -21,9 +21,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "مجموعة سنيم | Senim Group",
+  title: "Elite City",
   description:
-    "مجموعة سنيم - شريكك الاستراتيجي في التوريد والخدمات المتكاملة عبر مختلف الصناعات",
+    "Elite City - شريكك الاستراتيجي في التوريد والخدمات المتكاملة عبر مختلف الصناعات",
 };
 
 export default function RootLayout({

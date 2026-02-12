@@ -22,7 +22,7 @@ export default function About() {
           {/* Text */}
           <motion.div {...fadeUp(0.1)}>
             <p className="text-[1.15rem] font-semibold dark:text-white text-navy-dark mb-4 leading-[2]">
-              مجموعة سنيم هي مجموعة سعودية رائدة متعددة القطاعات، تأسست برؤية طموحة لتقديم خدمات ومنتجات متميزة تلبي احتياجات السوق المحلي والإقليمي.
+              Elite City هي مجموعة سعودية رائدة متعددة القطاعات، تأسست برؤية طموحة لتقديم خدمات ومنتجات متميزة تلبي احتياجات السوق المحلي والإقليمي.
             </p>
             <p className="dark:text-white/70 text-navy-dark/70 mb-4 leading-[1.9]">
               نفخر بأكثر من 20 عامًا من الخبرة في مجالات التوريد والخدمات اللوجستية والمقاولات، حيث نخدم قطاعات حكومية وتجارية متنوعة بأعلى معايير الجودة والاحترافية.
@@ -64,7 +64,7 @@ export default function About() {
             <div className="relative rounded-[20px] overflow-hidden group">
               <Image
                 src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070"
-                alt="مستودع سنيم"
+                alt="مستودع Elite City"
                 width={600}
                 height={450}
                 className="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-600"

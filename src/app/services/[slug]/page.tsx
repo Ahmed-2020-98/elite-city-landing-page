@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!service) return { title: "الخدمة غير موجودة" };
 
   return {
-    title: `${service.title} | مجموعة سنيم`,
+    title: `${service.title} | Elite City`,
     description: service.shortDesc,
   };
 }

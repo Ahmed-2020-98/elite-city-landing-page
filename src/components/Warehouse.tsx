@@ -34,7 +34,7 @@ export default function Warehouse() {
       </div>
 
       <div className="relative z-[1] max-w-[1280px] mx-auto px-6 text-center">
-        <SectionHeader tag="البنية التحتية" title="مستودع سنيم:" goldWord="قلب اللوجستيات المتكامل" />
+        <SectionHeader tag="البنية التحتية" title="مستودع Elite City:" goldWord="قلب اللوجستيات المتكامل" />
 
         <motion.p {...fadeUp(0.2)} className="max-w-[700px] mx-auto mb-[50px] text-white/80 text-[1.05rem] leading-[2]">
           نمتلك مستودعات حديثة ومجهزة بأعلى المعايير لتخزين وتوزيع المنتجات بكفاءة عالية، مما يضمن وصول المنتجات إلى عملائنا بأفضل حالة وفي الوقت المحدد.

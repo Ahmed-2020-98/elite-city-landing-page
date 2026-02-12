@@ -134,7 +134,7 @@ export default function Navbar() {
           <Link href="/" className="flex-shrink-0">
             <Image
               src={logo}
-              alt="سنيم جروب"
+              alt="Elite City"
               width={120}
               height={50}
               className="h-[45px] w-auto object-contain"

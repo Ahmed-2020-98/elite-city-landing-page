@@ -56,14 +56,14 @@ export default function Footer() {
             <div className="mb-[18px]">
               <Image
                 src={logo}
-                alt="سنيم جروب"
+                alt="Elite City"
                 width={120}
                 height={50}
                 className="h-[45px] w-auto object-contain"
               />
             </div>
             <p className="text-[0.9rem] text-white/70 leading-[1.9] mb-5">
-              مجموعة سنيم - شريكك الاستراتيجي في التوريد والخدمات المتكاملة. نقدم حلولًا متميزة عبر 9 قطاعات مختلفة بأعلى معايير الجودة والاحترافية.
+              Elite City - شريكك الاستراتيجي في التوريد والخدمات المتكاملة. نقدم حلولًا متميزة عبر 9 قطاعات مختلفة بأعلى معايير الجودة والاحترافية.
             </p>
             <div className="flex gap-2.5">
               {socials.map((s, i) => (
@@ -144,7 +144,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="flex items-center justify-between py-5 flex-wrap gap-2.5 text-center sm:text-right">
           <p className="text-[0.85rem] text-silver">
-            جميع الحقوق محفوظة &copy; {new Date().getFullYear()} مجموعة سنيم
+            جميع الحقوق محفوظة &copy; {new Date().getFullYear()} Elite City
           </p>
           <p className="text-[0.85rem] text-silver">
             تصميم وتطوير بـ <FaHeart className="inline text-gold mx-1" />

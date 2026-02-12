@@ -38,14 +38,24 @@ const socials = [
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+
+  const phoneNumber = "966544436897"; // ← غيّر الرقم هنا
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
+
+    const text = `📩 رسالة جديدة من الموقع\n\n👤 الاسم: ${form.name}\n📧 الإيميل: ${form.email}\n📌 الموضوع: ${form.subject || "غير محدد"}\n💬 الرسالة:\n${form.message}`;
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+
     setTimeout(() => {
+      window.open(url, "_blank");
       setStatus("sent");
+      setForm({ name: "", email: "", subject: "", message: "" });
       setTimeout(() => setStatus("idle"), 2500);
-    }, 1500);
+    }, 500);
   };
 
   return (
@@ -95,6 +105,8 @@ export default function Contact() {
                   type="text"
                   placeholder="الاسم الكامل"
                   required
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
                   className="w-full py-3.5 px-[18px] dark:bg-navy-dark/50 bg-[#F5F7FA]/80 border border-gold/20 rounded-xl dark:text-white text-navy-dark font-cairo text-[0.95rem] outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(200,162,58,0.1)] transition-all placeholder:dark:text-white/40 placeholder:text-navy-dark/40"
                 />
               </div>
@@ -103,6 +115,8 @@ export default function Contact() {
                   type="email"
                   placeholder="البريد الإلكتروني"
                   required
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
                   className="w-full py-3.5 px-[18px] dark:bg-navy-dark/50 bg-[#F5F7FA]/80 border border-gold/20 rounded-xl dark:text-white text-navy-dark font-cairo text-[0.95rem] outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(200,162,58,0.1)] transition-all placeholder:dark:text-white/40 placeholder:text-navy-dark/40"
                 />
               </div>
@@ -111,6 +125,8 @@ export default function Contact() {
               <input
                 type="text"
                 placeholder="الموضوع"
+                value={form.subject}
+                onChange={(e) => setForm({ ...form, subject: e.target.value })}
                 className="w-full py-3.5 px-[18px] dark:bg-navy-dark/50 bg-[#F5F7FA]/80 border border-gold/20 rounded-xl dark:text-white text-navy-dark font-cairo text-[0.95rem] outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(200,162,58,0.1)] transition-all placeholder:dark:text-white/40 placeholder:text-navy-dark/40"
               />
             </div>
@@ -119,17 +135,18 @@ export default function Contact() {
                 rows={5}
                 placeholder="رسالتك..."
                 required
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className="w-full py-3.5 px-[18px] dark:bg-navy-dark/50 bg-[#F5F7FA]/80 border border-gold/20 rounded-xl dark:text-white text-navy-dark font-cairo text-[0.95rem] outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(200,162,58,0.1)] transition-all resize-y min-h-[120px] placeholder:dark:text-white/40 placeholder:text-navy-dark/40"
               />
             </div>
             <button
               type="submit"
               disabled={status !== "idle"}
-              className={`w-full mt-4 py-4 rounded-xl font-semibold text-[1.05rem] flex items-center justify-center gap-2.5 transition-all duration-300 ${
-                status === "sent"
-                  ? "bg-green-500 text-white"
-                  : "bg-gradient-to-br from-gold to-gold-light text-navy-dark shadow-[0_4px_15px_rgba(200,162,58,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(200,162,58,0.4)]"
-              } disabled:opacity-80 disabled:cursor-not-allowed`}
+              className={`w-full mt-4 py-4 rounded-xl font-semibold text-[1.05rem] flex items-center justify-center gap-2.5 transition-all duration-300 ${status === "sent"
+                ? "bg-green-500 text-white"
+                : "bg-gradient-to-br from-gold to-gold-light text-navy-dark shadow-[0_4px_15px_rgba(200,162,58,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(200,162,58,0.4)]"
+                } disabled:opacity-80 disabled:cursor-not-allowed`}
             >
               {status === "idle" && (
                 <>
