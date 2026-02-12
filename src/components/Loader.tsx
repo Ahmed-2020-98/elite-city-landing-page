@@ -22,9 +22,9 @@ export default function Loader() {
         >
           <div className="text-center">
             {/* Logo */}
-            <div className="font-playfair text-6xl font-extrabold mb-8 animate-[loaderPulse_1.5s_ease-in-out_infinite]">
-              <span className="text-gold-gradient">S</span>
-              <span className="text-white mr-1">G</span>
+            <div className="font-playfair text-5xl font-extrabold mb-8 animate-[loaderPulse_1.5s_ease-in-out_infinite]">
+              <span className="text-gold-gradient">Elite</span>
+              <span className="text-white mr-2">City</span>
             </div>
             {/* Loading Bar */}
             <div className="w-[200px] h-[3px] bg-gold/20 rounded-[10px] overflow-hidden mx-auto">

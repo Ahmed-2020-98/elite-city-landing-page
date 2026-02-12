@@ -65,7 +65,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.h1 {...fadeUp(0.5)} className="text-[clamp(2.5rem,6vw,4.5rem)] font-black leading-[1.2] mb-5 text-white">
-          <span className="text-gold-gradient">Elite City</span>
+          <span className="text-gold-gradient">Elite</span> <span className="text-white">City</span>
         </motion.h1>
 
         <motion.p {...fadeUp(0.7)} className="text-[clamp(1.1rem,2.5vw,1.5rem)] text-white/80 mb-10 max-w-[600px] mx-auto">
