@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== CSS VARIABLES ========== */
+:root {
+  --gold: #C8A23A;
+  --gold-light: #E6C76A;
+  --gold-gradient: linear-gradient(135deg, #C8A23A, #E6C76A);
+  --navy-dark: #0B1C2D;
+  --navy-royal: #12263A;
+}
+
+/* ========== SCROLLBAR ========== */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) var(--navy-dark);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--navy-dark);
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #f5f7fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-gradient);
+  border-radius: 10px;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--navy-dark);
+}
+
+/* ========== GOLD TEXT GRADIENT ========== */
+.text-gold-gradient {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========== CUSTOM ANIMATIONS ========== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* ========== GLOBAL SMOOTH SCROLL ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========== PARTNERS SLIDER ========== */
+.partners-slider {
+  display: flex;
+  gap: 30px;
+  animation: scrollPartners 25s linear infinite;
+  width: max-content;
+}
+
+@keyframes scrollPartners {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ========== LOADER BAR ========== */
+.loader-bar-fill {
+  animation: loaderFill 2s ease-in-out forwards;
+}
+
+@keyframes loaderFill {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* ========== SCROLL DOT ========== */
+.scroll-dot-anim {
+  animation: scrollDotAnim 2s ease-in-out infinite;
+}
+
+@keyframes scrollDotAnim {
+  0% { top: 6px; opacity: 1; }
+  100% { top: 22px; opacity: 0; }
+}
+
+/* ========== PARTICLES ========== */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0;
+  animation: particleFloat 6s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+  0% { opacity: 0; transform: translateY(100vh) scale(0); }
+  20% { opacity: 0.6; }
+  80% { opacity: 0.3; }
+  100% { opacity: 0; transform: translateY(-20vh) scale(1); }
+}
+
+/* ========== HERO BG ZOOM ========== */
+.hero-bg-zoom {
+  animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.15); }
+}
+
+/* ========== TITLE LINE DOT ========== */
+.title-line-dot::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(200, 162, 58, 0.5);
+}
+
+/* ========== SHIMMER BUTTON ========== */
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-shimmer:hover::before {
+  left: 100%;
+}
+
+/* ========== SERVICE CARD TOP LINE ========== */
+.service-card-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gold-gradient);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.service-card-line:hover::before {
+  transform: scaleX(1);
+}
+
+/* ========== FOOTER LINK DOTS ========== */
+.footer-link-dot::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(200, 162, 58, 0.3);
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.footer-link-dot:hover::before {
+  background: var(--gold);
+}
+
+/* ========== PARTNER TRACK MASK ========== */
+.partner-track-mask {
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
