@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { FaArrowLeft, FaPhoneAlt, FaFileAlt, FaReceipt } from "react-icons/fa";
+import { FaArrowLeft, FaPhoneAlt } from "react-icons/fa";
 import Image from "next/image";
 
 const fadeUp = (delay: number = 0) => ({
@@ -89,17 +89,7 @@ export default function Hero() {
           </button>
         </motion.div>
 
-        <motion.div {...fadeUp(1.1)} className="flex items-center justify-center gap-4 flex-wrap text-[0.85rem] text-white/50">
-          <span className="inline-flex items-center gap-1.5">
-            <FaFileAlt className="text-gold" />
-            سجل تجاري: 1010XXXXXX
-          </span>
-          <span className="w-1 h-1 bg-gold rounded-full hidden sm:block" />
-          <span className="inline-flex items-center gap-1.5">
-            <FaReceipt className="text-gold" />
-            الرقم الضريبي: 3XXXXXXXXXXXXX
-          </span>
-        </motion.div>
+
       </div>
 
       {/* Scroll Indicator */}
