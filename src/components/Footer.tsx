@@ -7,11 +7,9 @@ import {
   FaTwitter,
   FaInstagram,
   FaLinkedinIn,
-  FaWhatsapp,
   FaPhoneAlt,
   FaEnvelope,
   FaMapMarkerAlt,
-  FaHeart,
 } from "react-icons/fa";
 
 const serviceLinks = [
@@ -35,7 +33,6 @@ const socials = [
   { icon: <FaTwitter />, href: "#" },
   { icon: <FaInstagram />, href: "#" },
   { icon: <FaLinkedinIn />, href: "#" },
-  { icon: <FaWhatsapp />, href: "#" },
 ];
 
 export default function Footer() {
@@ -124,15 +121,15 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-[0.9rem]">
                 <FaPhoneAlt className="text-gold mt-1 text-[0.85rem]" />
-                <span className="text-white/70" dir="ltr">+966 50 XXX XXXX</span>
+                <a href="tel:920017925" className="text-white/70 hover:text-gold transition-colors" dir="ltr">920017925</a>
               </li>
               <li className="flex items-start gap-3 text-[0.9rem]">
                 <FaEnvelope className="text-gold mt-1 text-[0.85rem]" />
-                <span className="text-white/70">info@senimgroup.com</span>
+                <a href="mailto:info@elitecityco.com" className="text-white/70 hover:text-gold transition-colors">info@elitecityco.com</a>
               </li>
               <li className="flex items-start gap-3 text-[0.9rem]">
                 <FaMapMarkerAlt className="text-gold mt-1 text-[0.85rem]" />
-                <span className="text-white/70">الرياض، المملكة العربية السعودية</span>
+                <a href="https://maps.app.goo.gl/7G4ny5Mo5JGzcRv27" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-gold transition-colors">الرياض - طريق الملك فيصل - حي المربع</a>
               </li>
             </ul>
           </div>
@@ -142,12 +139,21 @@ export default function Footer() {
         <div className="h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-30" />
 
         {/* Bottom */}
-        <div className="flex items-center justify-between py-5 flex-wrap gap-2.5 text-center sm:text-right">
+        <div className="flex flex-col items-center py-5 gap-2.5 text-center">
           <p className="text-[0.85rem] text-silver">
             جميع الحقوق محفوظة &copy; {new Date().getFullYear()} Elite City
           </p>
           <p className="text-[0.85rem] text-silver">
-            تصميم وتطوير بـ <FaHeart className="inline text-gold mx-1" />
+            جميع الحقوق محفوظة لـ{" "}
+            <a
+              href="https://coder-nation.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold hover:text-gold-light transition-colors"
+            >
+              Coder Nation
+            </a>{" "}
+            لخدمات التصميم والتسويق
           </p>
         </div>
       </div>

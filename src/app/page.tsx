@@ -12,7 +12,7 @@ import WorkingHours from "@/components/WorkingHours";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
 import JsonLd from "@/components/JsonLd";
 
 const organizationSchema = {
@@ -23,14 +23,16 @@ const organizationSchema = {
   logo: "https://elitecityco.com/logo4.webp",
   description:
     "شركة سعودية رائدة متعددة القطاعات متخصصة في التوريد والخدمات المتكاملة",
+  email: "info@elitecityco.com",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "طريق الملك فيصل - حي المربع",
     addressLocality: "الرياض",
     addressCountry: "SA",
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+966544436897",
+    telephone: "920017925",
     contactType: "customer service",
     availableLanguage: ["Arabic", "English"],
   },
@@ -75,7 +77,7 @@ export default function Home() {
       </main>
       <Footer />
       <BackToTop />
-      <WhatsAppButton />
+
     </>
   );
 }

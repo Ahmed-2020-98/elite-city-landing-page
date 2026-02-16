@@ -9,7 +9,6 @@ import {
   FaTwitter,
   FaInstagram,
   FaLinkedinIn,
-  FaWhatsapp,
   FaPaperPlane,
   FaSpinner,
   FaCheck,
@@ -24,23 +23,22 @@ const fadeUp = (delay: number = 0) => ({
 });
 
 const contactInfo = [
-  { icon: <FaPhoneAlt />, title: "اتصل بنا", value: "+966 50 XXX XXXX", dir: "ltr" as const },
-  { icon: <FaEnvelope />, title: "راسلنا", value: "info@senimgroup.com", dir: undefined },
-  { icon: <FaMapMarkerAlt />, title: "زرنا", value: "الرياض، المملكة العربية السعودية", dir: undefined },
+  { icon: <FaPhoneAlt />, title: "اتصل بنا", value: "920017925", dir: "ltr" as const, href: "tel:920017925" },
+  { icon: <FaEnvelope />, title: "راسلنا", value: "info@elitecityco.com", dir: undefined, href: "mailto:info@elitecityco.com" },
+  { icon: <FaMapMarkerAlt />, title: "زرنا", value: "الرياض - طريق الملك فيصل - حي المربع", dir: undefined, href: "https://maps.app.goo.gl/7G4ny5Mo5JGzcRv27" },
 ];
 
 const socials = [
   { icon: <FaTwitter />, href: "#" },
   { icon: <FaInstagram />, href: "#" },
   { icon: <FaLinkedinIn />, href: "#" },
-  { icon: <FaWhatsapp />, href: "#" },
 ];
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
 
-  const phoneNumber = "966544436897"; // ← غيّر الرقم هنا
+  const phoneNumber = "966920017925"; // ← غيّر الرقم هنا
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -73,9 +71,21 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-[1rem] font-bold mb-1 dark:text-white text-navy-dark">{item.title}</h4>
-                  <p className="text-[0.9rem] dark:text-white/70 text-navy-dark/70" dir={item.dir}>
-                    {item.value}
-                  </p>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[0.9rem] dark:text-white/70 text-navy-dark/70 hover:text-gold transition-colors"
+                      dir={item.dir}
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p className="text-[0.9rem] dark:text-white/70 text-navy-dark/70" dir={item.dir}>
+                      {item.value}
+                    </p>
+                  )}
                 </div>
               </div>
             ))}
