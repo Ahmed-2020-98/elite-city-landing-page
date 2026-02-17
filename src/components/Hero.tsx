@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaPhoneAlt } from "react-icons/fa";
 import Image from "next/image";
+import logo from "@/assets/images/logo4.webp";
 
 const fadeUp = (delay: number = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -58,6 +59,17 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-[2] text-center max-w-[1280px] mx-auto px-6 pt-20">
+        {/* Logo */}
+        <motion.div {...fadeUp(0.1)} className="mb-8">
+          <Image
+            src={logo}
+            alt="Elite City"
+            width={260}
+            height={260}
+            className="mx-auto drop-shadow-[0_4px_20px_rgba(200,162,58,0.3)]"
+          />
+        </motion.div>
+
         <motion.div {...fadeUp(0.3)} className="inline-flex items-center gap-[15px] mb-6 text-[0.95rem] text-gold-light font-medium tracking-wide">
           <span className="w-10 h-px bg-gradient-to-r from-gold to-gold-light" />
           <span>شريكك الاستراتيجي في التوريد والخدمات</span>
