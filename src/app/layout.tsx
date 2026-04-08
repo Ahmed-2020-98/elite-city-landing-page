@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     canonical: "https://elitecityco.com",
   },
   verification: {
-    // google: "your-google-verification-code",
+    google: "CIGrgujQtgxy7sbDduxpHs9PTq2kyEFBmXSzGsxNBrI",
   },
 };
 
